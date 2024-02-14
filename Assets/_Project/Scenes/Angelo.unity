@@ -350,10 +350,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 1d712c9e7b06ff346aad76143e8e4f86, type: 2}
+    m_Data: {fileID: 11400000, guid: cd80bdbbb5a0b6e4ba3d4c0062b722fe, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: -1907755790, guid: 745c819a3147f8e408d4084b0715a47f, type: 3}
+    m_Data: {fileID: 21300000, guid: a07d9d68d400fcb45b9391dc353fd436, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -3125,10 +3125,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 1d712c9e7b06ff346aad76143e8e4f86, type: 2}
+    m_Data: {fileID: 11400000, guid: 9b4d316536e3ff04e8732600f944564d, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: -1907755790, guid: 745c819a3147f8e408d4084b0715a47f, type: 3}
+    m_Data: {fileID: 21300000, guid: f95fb685f1545fe4f8c01411d82f6aec, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
