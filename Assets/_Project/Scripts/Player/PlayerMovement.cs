@@ -40,7 +40,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGrounded()
     {
-      if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6))
+      if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9))
+      {
+        Debug.Log("RedDead");
+        grounded = true;
+      } else if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6))
       {
         grounded = true;
       } else if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 7) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 7))
