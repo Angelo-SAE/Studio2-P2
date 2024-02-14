@@ -8,11 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed, jumpHeight, floorCheckRange, increaseGoo, decreaseGoo, noGoo;
     public static bool grounded;
     private float horizontal;
+    private Vector3 startingPosition;
 
 
     void Start()
     {
       rb2d = GetComponent<Rigidbody2D>();
+      startingPosition = transform.position;
     }
 
     void Update()
@@ -40,8 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGrounded()
     {
-      if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9))
+      if(Physics2D.Raycast(new Vector2(transform.position.x - 0.20f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9) || Physics2D.Raycast(new Vector2(transform.position.x + 0.20f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9))
       {
+        GetComponent<PlayerMovement>().Reset();
         Debug.Log("RedDead");
         grounded = true;
       } else if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6))
@@ -51,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
       {
         grounded = true;
       } else if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 8) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 8))
+      {
+        grounded = true;
+      } else if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 10) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 10))
       {
         grounded = true;
       } else {
@@ -70,6 +76,13 @@ public class PlayerMovement : MonoBehaviour
       {
         jumpHeight = decreaseGoo;
       }
+    }
+
+    public void Reset()
+    {
+      transform.position = startingPosition;
+      rb2d.velocity = Vector3.zero;
+      grounded = true;
     }
 
 
