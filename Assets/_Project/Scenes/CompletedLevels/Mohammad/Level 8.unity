@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 137774211}
   - component: {fileID: 137774210}
   - component: {fileID: 137774209}
-  - component: {fileID: 137774208}
+  - component: {fileID: 137774212}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -417,20 +417,6 @@ RectTransform:
   m_AnchoredPosition: {x: 307, y: 142}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &137774208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137774206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac26e375242be4029b1a68693081bc5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 3
-  player: {fileID: 177257256}
 --- !u!95 &137774209
 Animator:
   serializedVersion: 5
@@ -490,6 +476,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137774206}
   m_CullTransparentMesh: 1
+--- !u!114 &137774212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137774206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac26e375242be4029b1a68693081bc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3
+  player: {fileID: 177257256}
+  animate: {fileID: 137774209}
 --- !u!1 &177257254
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +542,7 @@ MonoBehaviour:
   increaseGoo: 2.03
   decreaseGoo: 0.96
   noGoo: 1.6
+  timer: {fileID: 137774212}
 --- !u!50 &177257257
 Rigidbody2D:
   serializedVersion: 4
@@ -1728,13 +1730,13 @@ CompositeCollider2D:
     m_ColliderPaths:
     - - X: 20000000
         Y: -40000000
-      - X: -10000000
+      - X: 0
         Y: -40000000
+      - X: 0
+        Y: -20000000
       - X: -10000000
-        Y: -10000000
-      - X: 0
-        Y: -10000000
-      - X: 0
+        Y: -20000000
+      - X: -10000000
         Y: 0
       - X: -20000000
         Y: 0
@@ -1772,17 +1774,13 @@ CompositeCollider2D:
         Y: 20000000
       - X: -20000000
         Y: 10000000
-      - X: 10000000
+      - X: 0
         Y: 10000000
+      - X: 0
+        Y: -10000000
       - X: 10000000
-        Y: -20000000
-      - X: 0
-        Y: -20000000
-      - X: 0
-        Y: -30000000
-      - X: 20000000
-        Y: -30000000
-      - X: 20000000
+        Y: -10000000
+      - X: 10000000
         Y: -20000000
       - X: 60000000
         Y: -20000000
@@ -1842,10 +1840,10 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 1.9999708, y: -5}
       - {x: 1.9999708, y: -4}
-      - {x: -1, y: -3.9999704}
-      - {x: -0.9999706, y: -1}
-      - {x: 0, y: -0.99997073}
-      - {x: -0.000029300001, y: 0}
+      - {x: 0, y: -3.9999704}
+      - {x: -0.000029300001, y: -2}
+      - {x: -1, y: -1.9999707}
+      - {x: -1.0000293, y: 0}
       - {x: -2, y: -0.000029300001}
       - {x: -2.0000293, y: -2}
       - {x: -3, y: -2.0000293}
@@ -1864,12 +1862,10 @@ CompositeCollider2D:
       - {x: -7.9999704, y: 2}
       - {x: -2, y: 1.9999707}
       - {x: -1.9999708, y: 1}
-      - {x: 1, y: 0.9999706}
-      - {x: 0.9999706, y: -2}
-      - {x: 0, y: -2.0000293}
-      - {x: 0.000029300001, y: -3}
-      - {x: 2, y: -2.999971}
-      - {x: 2.0000293, y: -2}
+      - {x: 0, y: 0.9999706}
+      - {x: 0.000029300001, y: -1}
+      - {x: 1, y: -1.0000294}
+      - {x: 1.0000293, y: -2}
       - {x: 6, y: -2.0000293}
       - {x: 6.000029, y: -3}
       - {x: 7, y: -2.999971}
@@ -2201,6 +2197,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 3, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -2301,17 +2307,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 1, y: -3, z: 0}
+  - first: {x: -1, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -2481,7 +2477,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -1, y: -1, z: 0}
+  - first: {x: 0, y: -1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -2562,6 +2558,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -9, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -3153,17 +3159,17 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 113
+  - m_RefCount: 114
     m_Data: {fileID: 11400000, guid: f81c942c855879045b602cfd93702c3d, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 113
+  - m_RefCount: 114
     m_Data: {fileID: -1207233178, guid: 745c819a3147f8e408d4084b0715a47f, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 113
+  - m_RefCount: 114
     m_Data:
       e00: 1
       e01: 0
@@ -3182,7 +3188,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 113
+  - m_RefCount: 114
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
