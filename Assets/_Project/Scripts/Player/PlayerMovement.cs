@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool grounded;
     private float horizontal;
     private Vector3 startingPosition;
+    public Timer timer;
 
 
     void Start()
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
       if(Input.GetButtonDown("Jump") && grounded)
       {
         rb2d.AddForce(Vector3.up * jumpHeight * 100f, ForceMode2D.Impulse);
+        timer.TimerReset();
       }
     }
 
