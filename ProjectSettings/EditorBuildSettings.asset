@@ -6,6 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_Project/Scenes/MainMenu.unity
+    guid: 300fa361c1e2542b1bffdf94a92d8d64
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Tutorial Levels/TutorialLevel1.unity
+    guid: 748e2ca0dcc5e1744b8e2c9795da2807
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Tutorial Levels/TutorialLevel2.unity
+    guid: f7df7e32ac6f16846bfdef446fc39c41
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Tutorial Levels/TutorialLevel3.unity
+    guid: 46943a13a4c634647a5633b530398d57
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Level1.unity
+    guid: 6e88cac1644e23b4d9dc1c01a4f81bdd
+  - enabled: 1
+    path: Assets/_Project/Scenes/CompletedLevels/Mohammad/Level2.unity
+    guid: 8ae334b60f9cd45b8ab1b1032877315a
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Level5.unity
+    guid: d3abf4d3eacd67e438563b7e613fa9f0
+  - enabled: 1
+    path: Assets/_Project/Scenes/CompletedLevels/Mohammad/Level4.unity
+    guid: 7a2b4174a5f024ced92f5224fde9b546
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Level3.unity
+    guid: e4bdf40ddc437d547824035b76f87140
+  - enabled: 1
+    path: Assets/_Project/Scenes/CompletedLevels/Mohammad/Level6.unity
+    guid: f7d862fb6aeea4fde9112fd870cd1773
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Level7.unity
+    guid: 13435590df070924d8b0803d346b3bf1
+  - enabled: 1
+    path: Assets/_Project/Scenes/CompletedLevels/Mohammad/Level8.unity
+    guid: 9a6b398812e8b4fec8bc36752a6e0552
+  - enabled: 1
+    path: Assets/_Project/Scenes/TempLevels/Level9.unity
+    guid: 3622841e03baa0445908c24f6f8b2b5e
+  - enabled: 1
+    path: Assets/_Project/Scenes/CompletedLevels/Mohammad/Level10.unity
+    guid: e6ad12fb5ddf845129dd394c04c32b15
   m_configObjects: {}
