@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    [SerializeField] private float moveSpeed, jumpHeight, floorCheckRange, increaseGoo, decreaseGoo, noGoo;
+    [SerializeField] private float moveSpeed, jumpHeight, floorCheckRange, increaseGoo, decreaseGoo, noGoo, fallMultiplier;
     public static bool grounded;
     private float horizontal;
     private Vector3 startingPosition;
@@ -38,7 +38,14 @@ public class PlayerMovement : MonoBehaviour
       if(Input.GetButtonDown("Jump") && grounded)
       {
         rb2d.AddForce(Vector3.up * jumpHeight * 100f, ForceMode2D.Impulse);
-        timer.TimerReset();
+        if(timer != null)
+        {
+          timer.TimerReset();
+        }
+      }
+      if(rb2d.velocity.y < 0)
+      {
+        rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
       }
     }
 

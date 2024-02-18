@@ -1,12 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
 
     [SerializeField] private Sprite doorClosed, doorOpen;
-    private bool doorIsOpen;
+    [SerializeField] private string nextLevelName;
+    private bool doorIsOpen, canExit;
+
+    void Update()
+    {
+      ExitLevel();
+
+    }
+
+    private void ExitLevel()
+    {
+      if(Input.GetButtonDown("Interact") && canExit)
+      {
+        LoadNextLevel();
+      }
+    }
+
+    private void LoadNextLevel()
+    {
+      SceneManager.LoadScene(nextLevelName);
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -14,14 +35,15 @@ public class Door : MonoBehaviour
       {
         GetComponent<SpriteRenderer>().sprite = doorOpen;
         doorIsOpen = true;
+        canExit = true;
+      } else if(doorIsOpen)
+      {
+        canExit = true;
       }
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerExit2D(Collider2D col)
     {
-      if(Input.GetButtonDown("Interact") && doorIsOpen)
-      {
-        Debug.Log("Complete");
-      }
+      canExit = false;
     }
 }
