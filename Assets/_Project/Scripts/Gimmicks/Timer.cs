@@ -17,14 +17,14 @@ public class Timer : MonoBehaviour
 
         if (timer <= 0)
         {
-            if (levelNumber == "Level 8")
+            if (levelNumber == "Level8")
             {
-                SceneManager.LoadScene("Level 8");
+                SceneManager.LoadScene("Level8");
             }
 
-            if (levelNumber == "Level 10")
+            if (levelNumber == "Level10")
             {
-                SceneManager.LoadScene("Level 10");
+                SceneManager.LoadScene("Level10");
             }
         }
     }

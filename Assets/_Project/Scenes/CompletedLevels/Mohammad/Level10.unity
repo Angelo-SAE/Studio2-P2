@@ -2746,8 +2746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac26e375242be4029b1a68693081bc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 3
-  player: {fileID: 0}
+  player: {fileID: 2125365280}
   animate: {fileID: 704726338}
 --- !u!95 &704726338
 Animator:
@@ -4140,6 +4139,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84396fb297831814bb471bcafcb02da8, type: 3}
+--- !u!114 &2125365280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2200955233410596268, guid: 84396fb297831814bb471bcafcb02da8, type: 3}
+  m_PrefabInstance: {fileID: 1962217618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67301c1f9a3c1c4eb8d980a984a6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
