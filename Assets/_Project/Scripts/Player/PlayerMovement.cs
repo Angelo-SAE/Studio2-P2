@@ -53,8 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
       if(Physics2D.Raycast(new Vector2(transform.position.x - 0.20f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9) || Physics2D.Raycast(new Vector2(transform.position.x + 0.20f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 9))
       {
-        GetComponent<PlayerMovement>().Reset();
-        Debug.Log("RedDead");
+        GetComponent<PlayerFallRoofDie>().RestartLevel();
         grounded = true;
       } else if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), -Vector3.up, floorCheckRange, 1 << 6))
       {
@@ -75,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GooCheck()
     {
-      if(Physics2D.Raycast(transform.position, -Vector3.up, floorCheckRange, 1 << 6))
+      if(Physics2D.Raycast(transform.position, -Vector3.up, floorCheckRange, 1 << 6) || Physics2D.Raycast(transform.position, -Vector3.up, floorCheckRange, 1 << 10))
       {
         jumpHeight = noGoo;
       } else if(Physics2D.Raycast(transform.position, -Vector3.up, floorCheckRange, 1 << 7))
@@ -86,13 +85,4 @@ public class PlayerMovement : MonoBehaviour
         jumpHeight = decreaseGoo;
       }
     }
-
-    public void Reset()
-    {
-      transform.position = startingPosition;
-      rb2d.velocity = Vector3.zero;
-      grounded = true;
-    }
-
-
 }

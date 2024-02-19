@@ -1,25 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerFallRoofDie : MonoBehaviour
 {
 
     [SerializeField] private float roofCheckRange, maxFallDistance;
     private float maxHeight;
+    private Scene currentScene;
+
+    void Start()
+    {
+      currentScene = SceneManager.GetActiveScene();
+    }
 
     void Update()
     {
+      RestartLevelButton();
       CheckRoofHit();
       CheckFall();
+    }
+
+    public void RestartLevel()
+    {
+      StaticTotalDeaths.deathCount++;
+      SceneManager.LoadScene(currentScene.name);
+    }
+
+    private void RestartLevelButton()
+    {
+      if(Input.GetButtonDown("Reset"))
+      {
+        RestartLevel();
+      }
     }
 
     private void CheckRoofHit()
     {
       if(Physics2D.Raycast(new Vector2(transform.position.x - 0.3f, transform.position.y), Vector3.up, roofCheckRange, 1 << 6) || Physics2D.Raycast(new Vector2(transform.position.x + 0.3f, transform.position.y), Vector3.up, roofCheckRange, 1 << 6))
       {
-        GetComponent<PlayerMovement>().Reset();
-        Debug.Log("dead");
+        RestartLevel();
       }
     }
 
@@ -34,10 +55,10 @@ public class PlayerFallRoofDie : MonoBehaviour
       } else {
         if(maxHeight - transform.position.y > maxFallDistance)
         {
-          GetComponent<PlayerMovement>().Reset();
-          Debug.Log("fallDead");
+          RestartLevel();
         }
         maxHeight = transform.position.y;
       }
     }
+
 }
