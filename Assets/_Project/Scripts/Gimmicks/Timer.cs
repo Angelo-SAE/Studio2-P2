@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public float timer = 3;
+    private float timer = 3;
     public PlayerMovement player;
     public Animator animate;
 
@@ -21,7 +21,6 @@ public class Timer : MonoBehaviour
             {
                 SceneManager.LoadScene("Level 8");
             }
-
 
             if (levelNumber == "Level 10")
             {
